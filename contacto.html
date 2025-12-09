@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Linkin Park Fan Site</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header-principal">
+        <h1 class="logo">Linkin Park</h1>
+        <nav class="menu-pill">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="historia.html">Historia</a></li>
+                <li><a href="albunes.html">Albunes</a></li>
+                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><a href="multimedia.html">Multimedia</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="titulo-seccion">Contacto</h2>
+        <p class="intro-contacto">Dejanos tu mensaje, tu recuerdo favorito o simplemente un grito de guerra. Esta comunidad sigue viva gracias a vos.</p>
+
+        <form class="formulario-contacto" id="formContacto">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+            </div>
+
+            <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="6" required placeholder="Escribí lo que quieras..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar mensaje</button>
+        </form>
+
+        <!-- Mensaje de éxito (aparece al enviar) -->
+        <div class="mensaje-exito" id="mensajeExito" style="display:none;">
+            <h3>¡Mensaje enviado!</h3>
+            <p>Gracias por ser parte de esta familia. El grito sigue vivo.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Trabajo Práctico Diseño Web © 2025 – Hecho con amor y nostalgia por Linkin Park</p>
+    </footer>
+
+    <!-- Pequeño script para simular envío (no necesitas backend) -->
+    <script>
+        document.getElementById('formContacto').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('mensajeExito').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
