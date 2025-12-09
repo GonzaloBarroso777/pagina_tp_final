@@ -1,0 +1,594 @@
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* -------------------- FONDO UNICO Y FIJO PARA TODO EL SITIO -------------------- */
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #000000;                                      /* negro de respaldo */
+}
+
+body {
+    min-height: 100vh;
+    background:
+        linear-gradient(to bottom,
+            rgba(0,0,0,0.15) 0%,
+            rgba(0,0,0,0.70) 40%,
+            rgba(0,0,0,0.95) 70%,
+            #000000 100%
+        ),
+        url('../img/fondo/fondo.png') center top / cover no-repeat scroll;
+    background-attachment: scroll;      /* cascada */
+    color: #fff;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* forzamos que nadie mas toque el background */
+body * {
+    background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    background-attachment: scroll !important;
+}
+
+/* Todo encima del fondo */
+body > * { position: relative; z-index: 2; }
+
+
+/* -------------------- HEADER / LOGO / MENÚ -------------------- */
+#index .logo {
+    font-size: 6.5rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff512f, #f09819);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 40px rgba(255, 81, 47, 0.4);
+    margin-bottom: 60px;
+}
+
+.menu-pill ul {
+    display: inline-flex;
+    list-style: none;
+    background: rgba(15,12,41,0.95);
+    padding: 18px 65px;
+    border-radius: 70px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    gap: 60px;
+    flex-wrap: nowrap;
+    margin-bottom: 100px;
+}
+
+.menu-pill a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 600;
+    transition: color .3s;
+    white-space: nowrap;
+}
+
+.menu-pill a:hover,
+.menu-pill a.active { color: #ff512f; font-weight: 800; }
+
+
+/* -------------------- INDEX – TEXTO BIENVENIDA -------------------- */
+
+.contenido-centrado h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff512f, #f09819);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+}
+
+.contenido-centrado p {
+    font-size: 1.55rem;
+    max-width: 900px;
+    color: #ccc;
+    margin: 0 auto 120px;
+}
+
+/* -------------------- CONTENEDORES Y SECCIONES -------------------- */
+.container, section {
+    padding: 80px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+    padding: 120px 20px 60px;
+    color: #777;
+    font-size: 1rem;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+    .logo { font-size: 4.5rem; margin: 60px auto 40px; }
+    .menu-pill ul { padding: 16px 30px; gap: 30px; flex-wrap: wrap; }
+    .menu-pill a { font-size: 1.2rem; }
+    .contenido-centrado h2 { font-size: 3rem; }
+    .contenido-centrado p { font-size: 1.35rem; }
+}
+
+
+
+/* -------------------- HISTORIA.HTML -------------------- */
+
+.timeline-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 120px 30px 100px;
+    text-align: left;
+}
+
+.titulo-seccion {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ff512f;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.timeline-item h3 {
+    font-size: 2rem;
+    color: #ff7040;
+    margin: 80px 0 30px;
+    font-weight: 700;
+}
+
+.timeline-item p {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.timeline-item.destacado h3 {
+    color: #ff512f;
+    font-size: 2.2rem;
+}
+
+.cierre {
+    margin: 150px 0 100px;
+    text-align: center;
+}
+
+.frase-final {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #ff7040;
+    line-height: 1.6;
+}
+
+
+
+/* -------------------- ALBUNES.HTML -------------------- */
+
+.albunes-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 120px 40px;
+}
+
+.album {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    margin-bottom: 160px;
+    padding: 50px 60px;
+    background: rgba(25, 25, 45, 0.85);     /* fondo oscuro elegante */
+    border-radius: 28px;
+    border: 1px solid rgba(255, 81, 47, 0.2);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+}
+
+.album:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 40px 100px rgba(255, 81, 47, 0.25);
+    border-color: rgba(255, 81, 47, 0.5);
+}
+
+/* Portada más grande y con efecto */
+.album-img {
+    flex: 0 0 380px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+}
+
+.album-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.album:hover .album-img img {
+    transform: scale(1.08);
+}
+
+/* Información más rica */
+.album-info h3 {
+    font-size: 3rem;
+    color: #ff512f;
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+.album-info .año {
+    font-size: 1.7rem;
+    color: #00ff99;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.album-info p {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.album-info .destacada {
+    font-size: 1.6rem;
+    color: #ff512f;
+    font-weight: bold;
+    margin: 30px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Reproductor más bonito */
+.album-info audio {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+}
+
+
+/* En pantallas pequeñas */
+@media (max-width: 1000px) {
+    .album {
+        flex-direction: column;
+        padding: 40px;
+    }
+    .album-img {
+        flex: 0 0 auto;
+        max-width: 350px;
+        margin: 0 auto 40px;
+    }
+    .album-info h3 { font-size: 2.6rem; }
+}
+
+
+/* -------------------- INTEGRANTES.HTML -------------------- */
+
+.integrantes-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 120px 40px 100px;
+}
+
+.titulo-seccion {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #ff512f;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/* Grilla de integrantes */
+.grid-integrantes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 50px;
+    margin: 0 auto;
+}
+
+/* Cada tarjeta */
+.miembro-card {
+    background: rgba(25, 25, 45, 0.85);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 81, 47, 0.15);
+}
+
+.miembro-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 35px 80px rgba(255, 81, 47, 0.3);
+}
+
+/* Foto */
+.miembro-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+/* Info */
+.info {
+    padding: 30px;
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 2.2rem;
+    color: #ff7040;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.info .rol {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.info .rol span {
+    color: #00ff99;
+    font-weight: bold;
+}
+
+/* Chester destacado */
+.homenaje {
+    border: 3px solid #ff512f;
+    grid-column: span 1;
+}
+
+.homenaje .info h3 {
+    color: #ff512f;
+    font-size: 2.6rem;
+}
+
+
+/* Actuales con etiqueta */
+.actual {
+    position: relative;
+}
+
+.etiqueta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #00ff99;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+/* Ex-miembros más pequeños */
+.ex {
+    opacity: 0.8;
+}
+
+.ex img {
+    height: 320px;
+}
+
+.ex .info h3 {
+    font-size: 1.8rem;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-integrantes { gap: 40px; }
+    .miembro-card img { height: 380px; }
+    .info h3 { font-size: 2rem; }
+    .homenaje .info h3 { font-size: 2.3rem; }
+    .etiqueta { top: 15px; right: 15px; padding: 8px 16px; font-size: 0.9rem; }
+}
+
+
+/* -------------------- MULTIMEDIA.HTML -------------------- */
+
+.multimedia-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 40px 100px;
+}
+
+.titulo-seccion {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #ff512f;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.intro-multimedia {
+    font-size: 1.6rem;
+    color: #ccc;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 100px;
+    line-height: 1.8;
+}
+
+/* Grilla de videos y fotos */
+.grid-multimedia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 60px;
+}
+
+/* Cada card */
+.media-card {
+    background: rgba(25, 25, 45, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 81, 47, 0.2);
+}
+
+.media-card:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 50px 100px rgba(255, 81, 47, 0.3);
+}
+
+/* Título del video/foto */
+.media-card h3 {
+    padding: 30px 40px 20px;
+    font-size: 2rem;
+    color: #ff7040;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+/* Videos y fotos */
+.media-card video,
+.media-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Reproductor más bonito */
+.media-card video::-webkit-media-controls-panel {
+    background: rgba(0,0,0,0.8);
+}
+
+/* Responsive – en pantallas pequeñas se apilan */
+@media (max-width: 768px) {
+    .grid-multimedia {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .media-card h3 {
+        font-size: 1.7rem;
+        padding: 25px 30px 15px;
+    }
+    .multimedia-section { padding: 100px 20px; }
+    .intro-multimedia { font-size: 1.4rem; margin-bottom: 80px; }
+}
+
+
+/* -------------------- CONTACTO.HTML -------------------- */
+
+.contacto-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 40px 100px;
+    text-align: center;
+}
+
+.titulo-seccion {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #ff512f;
+    margin-bottom: 40px;
+}
+
+.intro-contacto {
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 80px;
+    line-height: 1.8;
+}
+
+/* Formulario */
+.formulario-contacto {
+    background: rgba(25, 25, 45, 0.95);
+    padding: 60px 50px;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255, 81, 47, 0.3);
+    backdrop-filter: blur(12px);
+}
+
+.campo {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.campo label {
+    display: block;
+    font-size: 1.4rem;
+    color: #ff7040;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid rgba(255, 81, 47, 0.3);
+    border-radius: 16px;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #ff512f;
+    box-shadow: 0 0 30px rgba(255, 81, 47, 0.4);
+    background: rgba(0,0,0,0.8);
+}
+
+/* Botón enviar */
+.btn-enviar {
+    background: linear-gradient(135deg, #ff512f, #f09819);
+    color: #ffffff !important;     /* ← blanco puro */
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 18px 60px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 40px rgba(255, 81, 47, 0.5);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);   /* ← sombra sutil para que se vea perfecto */
+}
+
+.btn-enviar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(255, 81, 47, 0.7);
+    color: #ffffff !important;
+}
+
+/* Mensaje de éxito */
+.mensaje-exito {
+    margin-top: 60px;
+    padding: 50px;
+    background: rgba(0, 255, 153, 0.15);
+    border: 3px solid #00ff99;
+    border-radius: 24px;
+    color: #fff;
+}
+
+.mensaje-exito h3 {
+    font-size: 2.8rem;
+    color: #00ff99;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacto-section { padding: 100px 20px; }
+    .formulario-contacto { padding: 40px 30px; }
+    .campo input, .campo textarea { font-size: 1.1rem; padding: 16px; }
+    .btn-enviar { font-size: 1.3rem; padding: 16px 50px; }
+}
